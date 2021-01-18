@@ -3,6 +3,6 @@ export interface GenericBody {
     name: string,
     phone: string,
     city: string,
-    gener: string,
+    genre: string,
     actived: boolean,
 }
