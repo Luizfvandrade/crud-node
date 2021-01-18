@@ -9,7 +9,7 @@ import { InvalidKey, InvalidValue, RedisNotConnected } from './redis.errors';
 
 @Injectable()
 export class RedisService {
-  private readonly cachePrefix: 'user';
+  private readonly cachePrefix = 'user';
   private readonly config: Redis.RedisOptions;
   readonly client: Redis.Redis;
 
