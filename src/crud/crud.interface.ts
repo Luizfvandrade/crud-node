@@ -1,4 +1,4 @@
-export interface RequestBody {
+export interface GenericBody {
     cpf: string,
     name: string,
     phone: string,

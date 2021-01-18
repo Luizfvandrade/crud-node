@@ -2,7 +2,7 @@ import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Put } from '@
 
 import { ValidatorService } from '../validator/validator.service';
 
-import { RequestBody } from './crud.interface';
+import { GenericBody } from './crud.interface';
 
 @Controller('crud')
 export class CrudController {
@@ -14,7 +14,7 @@ export class CrudController {
     @HttpCode(HttpStatus.CREATED)
     @Post()
     async create(
-        @Body() request: RequestBody,
+        @Body() request: GenericBody,
     ): Promise<any>{
 
     }
@@ -31,7 +31,7 @@ export class CrudController {
     @Put('id')
     async update(
         @Param('id') cpf: string,
-        @Body() request: RequestBody,
+        @Body() request: GenericBody,
     ): Promise<any>{
 
     }
