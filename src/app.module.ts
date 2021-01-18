@@ -6,7 +6,6 @@ import { CrudController } from './crud/crud.controller';
 
 import { AppService } from './app.service';
 import { CrudService } from './crud/crud.service';
-import { ValidatorService } from './validator/validator.service';
 import { RedisService } from './redis/redis.service';
 
 const env = process.env.NODE_ENV
@@ -18,6 +17,6 @@ const env = process.env.NODE_ENV
     isGlobal: true,
   }),],
   controllers: [AppController, CrudController],
-  providers: [AppService, CrudService, ValidatorService, RedisService],
+  providers: [AppService, CrudService, RedisService],
 })
 export class AppModule {}

@@ -1,7 +1,5 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put } from '@nestjs/common';
 
-import { ValidatorService } from '../validator/validator.service';
-
 import { GenericBody } from './crud.interface';
 import { CrudService } from './crud.service';
 
@@ -9,7 +7,6 @@ import { CrudService } from './crud.service';
 export class CrudController {
     constructor(
         private readonly crudService: CrudService,
-        private readonly validatorService: ValidatorService,
     ){}
 
     @HttpCode(HttpStatus.CREATED)
