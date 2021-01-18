@@ -1,8 +1,8 @@
 {
   "name": "crud-node",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Creating a CRUD to solidify my knowledge using nest and redis",
+  "author": "Luiz Felippe Vieira de Andrade",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -10,10 +10,12 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "nest start --watch",
+    "start:dev": "cross-env NODE_ENV=development nest start --watch | pino-pretty",
+    "start:test": "cross-env NODE_ENV=test nest start --watch | pino-pretty",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -22,10 +24,12 @@
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
+    "@nestjs/config": "^0.6.1",
     "@nestjs/core": "^7.5.1",
     "@nestjs/platform-express": "^7.5.1",
     "ioredis": "^4.19.4",
     "lodash": "^4.17.20",
+    "nestjs": "0.0.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3"
