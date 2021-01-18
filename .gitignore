@@ -32,3 +32,19 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Env vars
+.env
+.*.env
+!.test.env
+.env.*
+!.env.test
+
+# Extras
+tmp/
+temp/
+dist/
+*.tsbuildinfo
+lib-cov
+coverage
+*.lcov
