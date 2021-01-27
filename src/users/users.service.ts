@@ -2,10 +2,10 @@ import { Injectable } from '@nestjs/common';
 
 import { RedisService } from '../redis/redis.service';
 
-import { GenericBody } from './crud.interface';
+import { GenericBody } from './users.interface';
 
 @Injectable()
-export class CrudService {
+export class UsersService {
 
     constructor(
         private readonly redisService: RedisService

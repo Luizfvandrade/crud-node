@@ -4,5 +4,4 @@ export interface GenericBody {
     phone: string,
     city: string,
     genre: string,
-    actived: boolean,
 }

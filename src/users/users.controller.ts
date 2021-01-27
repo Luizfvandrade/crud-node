@@ -1,12 +1,12 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put } from '@nestjs/common';
 
-import { GenericBody } from './crud.interface';
-import { CrudService } from './crud.service';
+import { GenericBody } from './users.interface';
+import { UsersService } from './users.service';
 
 @Controller('crud')
-export class CrudController {
+export class UsersController {
     constructor(
-        private readonly crudService: CrudService,
+        private readonly usersService: UsersService,
     ){}
 
     @HttpCode(HttpStatus.CREATED)
@@ -15,7 +15,7 @@ export class CrudController {
         @Body() request: GenericBody,
     ): Promise<any>{
         try {
-            const response = await this.crudService.create(request)
+            const response = await this.usersService.create(request)
 
             return response
         } catch(error) {
@@ -29,7 +29,7 @@ export class CrudController {
         @Param('id') cpf: string,
     ): Promise<any>{
         try {
-            const response = await this.crudService.read(cpf)
+            const response = await this.usersService.read(cpf)
 
             return response
         } catch(error) {
@@ -44,7 +44,7 @@ export class CrudController {
         @Body() request: GenericBody,
     ): Promise<any>{
         try {
-            const response = await this.crudService.update(cpf, request)
+            const response = await this.usersService.update(cpf, request)
 
             return response
         } catch(error) {
@@ -58,7 +58,7 @@ export class CrudController {
         @Param('id') cpf: string,
     ): Promise<any>{
         try {
-            const response = await this.crudService.delete(cpf)
+            const response = await this.usersService.delete(cpf)
 
             return response
         } catch(error) {

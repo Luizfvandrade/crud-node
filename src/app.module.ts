@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config'
 
 import { AppController } from './app.controller';
-import { CrudController } from './crud/crud.controller';
+import { UsersController } from './users/users.controller';
 
 import { AppService } from './app.service';
-import { CrudService } from './crud/crud.service';
+import { UsersService } from './users/users.service';
 import { RedisService } from './redis/redis.service';
 
 const env = process.env.NODE_ENV
@@ -16,7 +16,7 @@ const env = process.env.NODE_ENV
     envFilePath: `./config/.env.${env}`,
     isGlobal: true,
   }),],
-  controllers: [AppController, CrudController],
-  providers: [AppService, CrudService, RedisService],
+  controllers: [AppController, UsersController],
+  providers: [AppService, UsersService, RedisService],
 })
 export class AppModule {}
