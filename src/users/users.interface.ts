@@ -1,5 +1,5 @@
 export interface GenericBody {
-    cpf: string,
+    id: string,
     name: string,
     phone: string,
     city: string,
